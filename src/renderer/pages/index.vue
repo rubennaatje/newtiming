@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import { remote } from 'electron'
-import SystemInformation from '@/components/SystemInformation.vue'
+import { remote } from 'electron';
+import SystemInformation from '@/components/SystemInformation.vue';
 
 export default {
   components: {
@@ -33,14 +33,14 @@ export default {
   data () {
     return {
       externalContent: ''
-    }
+    };
   },
   methods: {
     openURL (url) {
-      remote.shell.openExternal(url)
+      remote.shell.openExternal(url);
     }
   }
-}
+};
 </script>
 
 <style>

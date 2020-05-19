@@ -7,17 +7,19 @@
 module.exports = {
   mode: 'spa', // or 'universal'
   head: {
-    title: 'sportscar-game'
+    title: 'sportscar-game',
   },
   loading: false,
   plugins: [
-    { ssr: true, src: '@/plugins/icons.js' }
-
+    { ssr: true, src: '@/plugins/icons.js' },
   ],
   buildModules: [
-
+    '@nuxtjs/tailwindcss',
   ],
   modules: [
 
+  ],
+  css: [
+    'terminal.css',
   ]
-}
+};

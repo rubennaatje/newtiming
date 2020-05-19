@@ -1,6 +1,6 @@
-import { EventEmitter } from 'events'
-import { BrowserWindow, app } from 'electron'
-const isProduction = process.env.NODE_ENV === 'production'
+import { EventEmitter } from 'events';
+import { BrowserWindow, app } from 'electron';
+const isProduction = process.env.NODE_ENV === 'production';
 
 export default class BrowserWinHandler {
   /**
@@ -8,11 +8,11 @@ export default class BrowserWinHandler {
      * @param [allowRecreate] {boolean}
      */
   constructor (options, allowRecreate = true) {
-    this._eventEmitter = new EventEmitter()
-    this.allowRecreate = allowRecreate
-    this.options = options
-    this.browserWindow = null
-    this._createInstance()
+    this._eventEmitter = new EventEmitter();
+    this.allowRecreate = allowRecreate;
+    this.options = options;
+    this.browserWindow = null;
+    this._createInstance();
   }
 
   _createInstance () {
@@ -20,13 +20,13 @@ export default class BrowserWinHandler {
     // initialization and is ready to create browser windows.
     // Some APIs can only be used after this event occurs.
     app.on('ready', () => {
-      this._create()
-    })
+      this._create();
+    });
 
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
-    if (!this.allowRecreate) return
-    app.on('activate', () => this._recreate())
+    if (!this.allowRecreate) return;
+    app.on('activate', () => this._recreate());
   }
 
   _create () {
@@ -40,16 +40,16 @@ export default class BrowserWinHandler {
           devTools: !process.env.SPECTRON // disable on e2e test environment
         }
       }
-    )
+    );
     this.browserWindow.on('closed', () => {
       // Dereference the window object
-      this.browserWindow = null
-    })
-    this._eventEmitter.emit('created')
+      this.browserWindow = null;
+    });
+    this._eventEmitter.emit('created');
   }
 
   _recreate () {
-    if (this.browserWindow === null) this._create()
+    if (this.browserWindow === null) this._create();
   }
 
   /**
@@ -63,8 +63,8 @@ export default class BrowserWinHandler {
      */
   onCreated (callback) {
     this._eventEmitter.once('created', () => {
-      callback(this.browserWindow)
-    })
+      callback(this.browserWindow);
+    });
   }
 
   /**
@@ -74,8 +74,8 @@ export default class BrowserWinHandler {
   created () {
     return new Promise(resolve => {
       this._eventEmitter.once('created', () => {
-        resolve(this.browserWindow)
-      })
-    })
+        resolve(this.browserWindow);
+      });
+    });
   }
 }

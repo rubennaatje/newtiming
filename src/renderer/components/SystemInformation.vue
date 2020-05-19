@@ -66,9 +66,9 @@ export default {
       platform: require('os').platform(),
       vue: require('vue/package.json').version,
       nuxt: require('nuxt/package.json').version
-    }
+    };
   }
-}
+};
 </script>
 
 <style scoped>
