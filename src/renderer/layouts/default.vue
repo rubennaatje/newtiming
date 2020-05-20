@@ -15,15 +15,16 @@ export default {
 <style>
 body {
   margin: 0 !important;
+  word-spacing: 0.3em;
 }
 
 :root {
-  --global-font-size: 14px;
+  --global-font-size: 15px;
   --global-line-height: 1.3em;
   --global-space: 10px;
   --font-stack: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace, serif;
-  --mono-font-stack: Menlo, Monaco, Lucida Console, Liberation Mono,
+  --mono-font-stack: Inter, Menlo, Monaco, Lucida Console, Liberation Mono,
     DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   --background-color: #222225;
   --page-width: 60em;

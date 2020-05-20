@@ -1,36 +1,29 @@
 <template>
-  <div class="terminal-nav">
-    <header class="terminal-logo">
-      <div class="logo terminal-prompt">
-        <a href="https://terminalcss.xyz" class="no-style">Terminal CSS</a>
+  <div class="terminal-nav flex">
+    <header class="terminal-logo w-1/3">
+      <div class="logo">
+        <a href="#" class="no-style terminal-prompt">2019 6 Hours of Spa</a>
+        <span>Free practice 1</span>
       </div>
     </header>
-    <nav class="terminal-menu">
-      <ul vocab="https://schema.org/" typeof="BreadcrumbList">
-        <li>
-          <nuxt-link to="/tailwindtest">
-            <span>Light</span>
-            <meta property="position">
+    <div class="w-1/3 text-center">
+      <span class="session-timer">23:59:20</span>
+    </div>
+    <nav class="terminal-menu w-1/3">
+      <ul vocab="https://schema.org/" typeof="BreadcrumbList" class="normal-menu">
+        <li v-for="item in menu" :key="item.title" property="itemListElement" typeof="ListItem">
+          <nuxt-link :to="item.to">
+            <span property="name">{{ item.title }}</span>
           </nuxt-link>
         </li>
-        <li property="itemListElement" typeof="ListItem">
-          <nuxt-link to="/about">
-            <span property="name">Dark</span>
-            <meta property="position" content="1">
-          </nuxt-link>
+        <li style="height: 28px;">
+          <span />
         </li>
-        <li property="itemListElement" typeof="ListItem">
-          <nuxt-link to="/about">
-            <span property="name">Sans</span>
-          </nuxt-link>
-          <meta property="position" content="2">
-          </nuxt-link>
-        </li>
-        <li property="itemListElement" typeof="ListItem">
-          <nuxt-link to="/about">
-            <span property="name">Sans Dark</span>
-            </a>
-            <meta property="position" content="3">
+      </ul>
+      <ul vocab="https://schema.org/" typeof="BreadcrumbList" class="submenu">
+        <li v-for="submenu in sublinks" :key="submenu.title" property="itemListElement" typeof="list">
+          <nuxt-link :to="submenu.to">
+            <span property="name">{{ submenu.title }}</span>
           </nuxt-link>
         </li>
         <li style="height: 28px;">
@@ -43,10 +36,141 @@
 
 <script>
 export default {
-
+  data () {
+    return {
+      menu: [
+        {
+          to: '/tailwindtest',
+          title: 'Dashboard',
+          subLinks: [
+            {
+              to: '/',
+              title: 'Dashboard',
+            },
+          ],
+        },
+        {
+          to: '/tv',
+          title: 'TV',
+          subLinks: [
+            {
+              to: '/tv/',
+              title: 'TV',
+            },
+            {
+              to: '/tv/guide',
+              title: 'Guide',
+            },
+          ],
+        },
+        {
+          to: '/radio',
+          title: 'Radio',
+          subLinks: [
+            {
+              to: '/',
+              title: 'Dashboard',
+            },
+          ],
+        },
+        {
+          to: '/data',
+          title: 'Data',
+          subLinks: [
+            {
+              to: '/',
+              title: 'Dashboard',
+            },
+          ],
+        },
+        {
+          to: '/timing',
+          title: 'Timing',
+          subLinks: [
+            {
+              to: '/',
+              title: 'Dashboard',
+            },
+          ],
+        },
+        {
+          to: '/strategy',
+          title: 'Strategy',
+          subLinks: [
+            {
+              to: '/strategy',
+              title: 'Dashboard',
+            },
+            {
+              to: '/strategy',
+              title: 'Stint editor',
+            },
+            {
+              to: '/sheet',
+              title: 'Spreadsheets',
+            },
+          ],
+        },
+        {
+          to: '/info',
+          title: 'Info',
+          subLinks: [
+            {
+              to: '/info/Welcome',
+              title: 'Welcome',
+            },
+            {
+              to: '/info/guide',
+              title: 'Rulebook',
+            },
+            {
+              to: '/info/guide',
+              title: 'Entrylist',
+            },
+            {
+              to: '/info/guide',
+              title: 'Spotterguide',
+            },
+            {
+              to: '/info/guide',
+              title: 'Players',
+            },
+            {
+              to: '/info/guide',
+              title: 'Guide',
+            },
+          ],
+        },
+      ],
+    };
+  },
+  computed: {
+    sublinks () {
+      if (this.$nuxt._route.matched[0]) {
+        const res = this.menu.filter(row => this.$nuxt._route.matched[0].path.includes(row.to))[0];
+        if (res) {
+          return res.subLinks;
+        }
+      }
+      return {};
+    },
+  },
 };
 </script>
 
 <style scoped>
-
+.terminal-menu {
+  width: 33.333333%;
+}
+.submenu {
+  margin: 0;
+}
+.normal-menu {
+    margin-top: calc(var(--global-space) * 1);
+    margin-bottom: 0;
+}
+.terminal-menu li a.active {
+    color: #151515;
+    color: var(--font-color);
+}
 </style>

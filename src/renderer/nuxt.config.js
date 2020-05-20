@@ -23,6 +23,7 @@ module.exports = {
   ],
   css: [
     'terminal.css',
+    'typeface-inter',
   ],
   bodyAttrs: {
     class: 'terminal"',
@@ -34,6 +35,14 @@ module.exports = {
         path: '@/components/awesome/',
         prefix: 'awesome',
       },
+      {
+        path: '@/components/common/',
+        prefix: 's',
+      },
     ],
+  },
+  router: {
+    linkActiveClass: 'active',
+    linkExactActiveClass: 'active-exact',
   },
 };
