@@ -8,46 +8,33 @@
     <nav class="terminal-menu">
       <ul vocab="https://schema.org/" typeof="BreadcrumbList">
         <li>
-          <a href="https://terminalcss.xyz" class="menu-item">
+          <nuxt-link to="/tailwindtest">
             <span>Light</span>
-          </a>
-          <meta property="position" />
+            <meta property="position">
+          </nuxt-link>
         </li>
         <li property="itemListElement" typeof="ListItem">
-          <a
-            href="https://terminalcss.xyz/dark/"
-            property="item"
-            typeof="WebPage"
-            class="menu-item active"
-          >
+          <nuxt-link to="/about">
             <span property="name">Dark</span>
-          </a>
-          <meta property="position" content="1" />
+            <meta property="position" content="1">
+          </nuxt-link>
         </li>
         <li property="itemListElement" typeof="ListItem">
-          <a
-            href="https://terminalcss.xyz/sans-serif/"
-            property="item"
-            typeof="WebPage"
-            class="menu-item"
-          >
+          <nuxt-link to="/about">
             <span property="name">Sans</span>
-          </a>
-          <meta property="position" content="2" />
+          </nuxt-link>
+          <meta property="position" content="2">
+          </nuxt-link>
         </li>
         <li property="itemListElement" typeof="ListItem">
-          <a
-            href="https://terminalcss.xyz/sans-serif-dark/"
-            property="item"
-            typeof="WebPage"
-            class="menu-item"
-          >
+          <nuxt-link to="/about">
             <span property="name">Sans Dark</span>
-          </a>
-          <meta property="position" content="3" />
+            </a>
+            <meta property="position" content="3">
+          </nuxt-link>
         </li>
         <li style="height: 28px;">
-          <span></span>
+          <span />
         </li>
       </ul>
     </nav>
@@ -61,35 +48,5 @@ export default {
 </script>
 
 <style scoped>
-.main-header {
-  height: 50px;
-  display: flex;
-  background-color: #364758;
-}
 
-nav {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-nav div {
-  height: 100%;
-  margin: 0 20px;
-  display: flex;
-  align-items: center;
-}
-
-a {
-  font-family: Helvetica, sans-serif;
-  color: white;
-  font-size: 1rem;
-  font-weight: 100;
-  text-decoration: underline;
-  text-transform: uppercase;
-}
-
-a:hover {
-  opacity: 0.9;
-}
 </style>

@@ -15,11 +15,25 @@ module.exports = {
   ],
   buildModules: [
     '@nuxtjs/tailwindcss',
+    // TODO: Remove when upgrading to nuxt 2.13+
+    '@nuxt/components',
   ],
   modules: [
 
   ],
   css: [
     'terminal.css',
-  ]
+  ],
+  bodyAttrs: {
+    class: 'terminal"',
+  },
+  components: {
+    dirs: [
+      '@/components',
+      {
+        path: '@/components/awesome/',
+        prefix: 'awesome',
+      },
+    ],
+  },
 };

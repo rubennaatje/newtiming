@@ -9,7 +9,7 @@ process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = 'true';
 
 electronDebug({
   showDevTools: false,
-  devToolsMode: 'right'
+  devToolsMode: 'right',
 });
 
 // work around https://github.com/MarshallOfSound/electron-devtools-installer/issues/122
@@ -32,7 +32,7 @@ app.on('ready', () => {
     accelerator: 'CommandOrControl+E',
     click: () => {
       app.exit(ELECTRON_RELAUNCH_CODE);
-    }
+    },
   });
   menu.append(refreshButton);
   Menu.setApplicationMenu(menu);

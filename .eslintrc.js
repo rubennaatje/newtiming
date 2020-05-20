@@ -19,7 +19,7 @@ module.exports = {
   rules: {
     // StandardJS — The Rules
         "indent": ["error", 2], // 2 spaces – for indentation
-        "max-len": ["error", { "code": 120}],
+
         "no-console": "off",
         "semi": [2, "always"],
         "arrow-parens": ["error", "as-needed"],

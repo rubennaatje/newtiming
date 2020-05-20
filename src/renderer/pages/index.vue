@@ -9,15 +9,15 @@
       </div>
     </div>
     <div class="e-nuxt-links">
-      <div class="e-nuxt-button" @click="openURL('https://github.com/michalzaq12/electron-nuxt')">
+      <div
+        class="e-nuxt-button"
+        @click="openURL('https://github.com/michalzaq12/electron-nuxt')"
+      >
         Github
       </div>
-      <div class="e-nuxt-button" @click="openURL('https://nuxtjs.org/guide')">
-        Nuxt.js
-      </div>
-      <div class="e-nuxt-button" @click="openURL('https://electronjs.org/docs')">
-        Electron.js
-      </div>
+      <div class="e-nuxt-button" @click="openURL('https://nuxtjs.org/guide')">Nuxt.js</div>
+      <div class="e-nuxt-button" @click="openURL('https://electronjs.org/docs')">Electron.js</div>
+      <AwesomeButton />
     </div>
   </div>
 </template>
@@ -28,18 +28,18 @@ import SystemInformation from '@/components/SystemInformation.vue';
 
 export default {
   components: {
-    SystemInformation
+    SystemInformation,
   },
   data () {
     return {
-      externalContent: ''
+      externalContent: '',
     };
   },
   methods: {
     openURL (url) {
       remote.shell.openExternal(url);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -58,7 +58,7 @@ export default {
   flex-wrap: wrap;
 }
 
-.e-nuxt-logo{
+.e-nuxt-logo {
   width: 400px;
 }
 
@@ -83,7 +83,7 @@ export default {
   font-size: 1rem;
 }
 
-.e-nuxt-button:hover{
+.e-nuxt-button:hover {
   cursor: pointer;
   color: white;
   background-color: #397c6d;

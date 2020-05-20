@@ -1,0 +1,10 @@
+{
+  "vetur.validation.template": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnPaste": true,
+    "editor.defaultFormatter": "octref.vetur",
+    "vetur.format.defaultFormatter.js": "prettier-eslint",
+    "vetur.format.defaultFormatter.ts": "vscode-typescript"
+}

@@ -8,7 +8,7 @@
 <script>
 import appHeader from '@/components/header';
 export default {
-  components: { appHeader }
+  components: { appHeader },
 };
 </script>
 
@@ -18,8 +18,8 @@ body {
 }
 
 :root {
-  --global-font-size: 15px;
-  --global-line-height: 1.4em;
+  --global-font-size: 14px;
+  --global-line-height: 1.3em;
   --global-space: 10px;
   --font-stack: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace, serif;

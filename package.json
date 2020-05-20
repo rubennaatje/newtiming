@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@mdi/font": "5.2.45",
+    "@nuxt/components": "^0.2.3",
     "@nuxtjs/eslint-config": "1.1.2",
     "@nuxtjs/tailwindcss": "^2.0.0",
     "@xpda-dev/core": "^0.1.5",
@@ -44,11 +45,10 @@
     "node-sass": "4.14.1",
     "nuxt": "2.12.2",
     "sass-loader": "8.0.2",
+    "terminal.css": "^0.7.1",
     "vue-devtools": "5.1.3",
     "webpack": "4.43.0",
-    "webpack-node-externals": "1.7.2",
-    "terminal.css": "^0.7.1"
+    "webpack-node-externals": "1.7.2"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
