@@ -1,8 +1,8 @@
 <template>
   <section>
     <div class="grid grid-rows-3 grid-col gap-4">
-      <SContainer class="row-span-3 w-1/2 " title="TV"> <Trackmap /> <Scrollingtiming /></SContainer>
-      <SContainer class="row-span-1 col-span-2 w-1/2" title="event info"> <Scrollingtiming /> </SContainer>
+      <SContainer class="row-span-3 " title="TV"> <Trackmap /></SContainer>
+      <SContainer class="row-span-1 col-span-2" title="event info"> <SpeedChart /> </SContainer>
 
       <SContainer class="row-span-2 col-span-2" title="chat"><Carinfo /></SContainer>
       <SContainer class="row-span-2 col-span-3" title="commentary">
