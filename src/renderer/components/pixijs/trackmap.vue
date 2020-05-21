@@ -33,7 +33,7 @@ export default {
   methods: {
     initPixi () {
       this.app = new PIXI.Application({
-        // transparent: true,
+        transparent: true,
         antialias: true,
       });
       this.$el.appendChild(this.app.view);

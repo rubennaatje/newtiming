@@ -50,16 +50,12 @@ export default {
           ],
         },
         {
-          to: '/tv/trackmap',
+          to: '/tv/',
           title: 'TV',
           subLinks: [
             {
-              to: '/tv/',
-              title: 'TV',
-            },
-            {
-              to: '/tv/guide',
-              title: 'Guide',
+              to: '/tv/trackmap',
+              title: 'trackmap',
             },
           ],
         },

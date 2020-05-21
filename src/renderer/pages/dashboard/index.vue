@@ -1,8 +1,9 @@
 <template>
   <section>
     <div class="grid grid-rows-3 grid-col gap-4">
-      <SContainer class="row-span-3 " title="TV"> <Trackmap /> </SContainer>
-      <SContainer class="row-span-1 col-span-2" title="event info" />
+      <SContainer class="row-span-3 w-1/2 " title="TV"> <Trackmap /> <Scrollingtiming /></SContainer>
+      <SContainer class="row-span-1 col-span-2 w-1/3" title="event info"> <Scrollingtiming /> </SContainer>
+
       <SContainer class="row-span-2 col-span-2" title="chat" />
       <SContainer class="row-span-2 col-span-3" title="commentary">
         <div class="h-5">Eric: The #11 just did a 2:01, could be catching ... if he keeps up that pace. </div>
