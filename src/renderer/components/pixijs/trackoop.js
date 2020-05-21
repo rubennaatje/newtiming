@@ -89,6 +89,21 @@ export class TrackOOP extends PIXI.Container {
     return graphics;
   }
 
+  addYellow (point, name, length, width, color) {
+    const first = this.track.getPointAtLength(point - 20);
+    const middle = this.track.getPointAtLength(point);
+    const second = this.track.getPointAtLength(point + 20);
+
+    const test = this.createRect(0, 0, width, length, 0xFCBA03);
+    test.position.x = middle.x;
+    test.position.y = middle.y;
+    test.name = name;
+    test.angle = this.angle360(first.x, first.y, second.x, second.y);
+    this.addChild(test);
+    test.zIndex = 4;
+    return test;
+  }
+
   drawMarker (point, name, length, width, color, placeText, textDistance = 14) {
     const first = this.track.getPointAtLength(point - 1);
     const middle = this.track.getPointAtLength(point);

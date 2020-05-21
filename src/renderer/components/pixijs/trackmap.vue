@@ -1,9 +1,8 @@
 
 <template>
-  <div class="stage" />
+  <div ref="stage" class="stage h-full" />
 </template>
 <script>
-/* eslint-disable no-undef */
 import { Viewport } from 'pixi-viewport';
 // eslint-disable-next-line no-unused-vars
 import tweenManager from 'pixi-tween';
@@ -29,6 +28,7 @@ export default {
   },
   mounted () {
     this.startPixi();
+    console.log();
   },
   methods: {
     initPixi () {
@@ -39,7 +39,7 @@ export default {
       this.$el.appendChild(this.app.view);
       this.app.renderer.view.style.display = 'block';
       this.app.renderer.autoResize = true;
-      this.app.renderer.resize(window.innerWidth, window.innerHeight);
+      this.app.renderer.resize(this.$refs.stage.clientWidth, this.$refs.stage.clientHeight);
 
       this.viewport = new Viewport({
         screenWidth: window.innerWidth,
@@ -162,11 +162,6 @@ export default {
       });
 
       this.viewport.addChild(car);
-      this.viewport.follow(car, {
-        radius: 50,
-        speed: 2,
-        acceleration: 100,
-      });
     },
   },
 };

@@ -1,6 +1,6 @@
 <template>
-  <SContainer title="trackmap">
-    <Trackmap />
+  <SContainer title="trackmap" class="h-full">
+    <Trackmap class="h-full" />
   </SContainer>
 </template>
 

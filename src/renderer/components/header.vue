@@ -40,12 +40,12 @@ export default {
     return {
       menu: [
         {
-          to: '/tailwindtest',
+          to: '/dashboard',
           title: 'Dashboard',
           subLinks: [
             {
-              to: '/',
-              title: 'Dashboard',
+              to: '/tailwindtest',
+              title: 'Tailwind test',
             },
           ],
         },
