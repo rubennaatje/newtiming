@@ -838,6 +838,11 @@
     postcss "7.0.28"
     purgecss "^2.2.0"
 
+"@growthbunker/vueflags@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@growthbunker/vueflags/-/vueflags-0.1.0.tgz#c81ede4f82da117df71816e140e20662f69e2eaa"
+  integrity sha512-Ukc0h60pWatbH2hNgqoC70e2Cls2mvsR6M+jEMH+Qca2ZkzbL1sybEu7M7KSnSL0E08+miW4yd9xs/MlATtJOg==
+
 "@mdi/font@5.2.45":
   version "5.2.45"
   resolved "https://registry.yarnpkg.com/@mdi/font/-/font-5.2.45.tgz#88d3d83954b7e9b88a9691567ae6c8b922cbab53"
@@ -4941,6 +4946,16 @@ find-up@^4.0.0, find-up@^4.1.0:
   dependencies:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
+
+flag-icon-css@^2.8.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/flag-icon-css/-/flag-icon-css-2.9.0.tgz#5793c15244e3c63ae36631478a758a3fc29c86be"
+  integrity sha512-SeHvGEB43XFPZiJz6lFFRGHfp+Db+s1qGiClW70cZauQVbPM42wImlNUEuXSXs94kPchz7xvoxP0QK1y6FxLfg==
+
+flag-icon-css@^3.4.6:
+  version "3.4.6"
+  resolved "https://registry.yarnpkg.com/flag-icon-css/-/flag-icon-css-3.4.6.tgz#7e51099c85648c65f86d9ebb9c0ec6f5d8826714"
+  integrity sha512-rF69rt19Hr63SRQTiPBzQABaYB20LAgZhDkr/AxqSdgmCIN+tC5PRMz56Y0gxehFXJmdRwv55+GMi7R1fCRTwg==
 
 flat-cache@^2.0.1:
   version "2.0.1"
@@ -10750,6 +10765,11 @@ vue-client-only@^2.0.0:
   resolved "https://registry.yarnpkg.com/vue-client-only/-/vue-client-only-2.0.0.tgz#ddad8d675ee02c761a14229f0e440e219de1da1c"
   integrity sha512-arhk1wtWAfLsJyxGMoEYhoBowM87/i6HLSG2LH/03Yog6i2d9JEN1peMP0Ceis+/n9DxdenGYZZTxbPPJyHciA==
 
+vue-country-flag@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/vue-country-flag/-/vue-country-flag-2.0.1.tgz#b5b9c2092284dbcb793deee690ae12a13571f6fe"
+  integrity sha512-an33mrPd6v48oxgFWlYD+QPOUNWWwovyyOpUHwOa8y5xx+NalehYmloDdCyIqnEqPJC2/i6c33G68RqrvC6BQQ==
+
 vue-eslint-parser@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-5.0.0.tgz#00f4e4da94ec974b821a26ff0ed0f7a78402b8a1"
@@ -10761,6 +10781,13 @@ vue-eslint-parser@^5.0.0:
     espree "^4.1.0"
     esquery "^1.0.1"
     lodash "^4.17.11"
+
+vue-flag-icon@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/vue-flag-icon/-/vue-flag-icon-1.0.6.tgz#0304fdfeebd982a6bf985c633c346ff3c6d2f9d7"
+  integrity sha1-AwT9/uvZgqa/mFxjPDRv88bS+dc=
+  dependencies:
+    flag-icon-css "^2.8.0"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"

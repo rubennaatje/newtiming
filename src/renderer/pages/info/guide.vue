@@ -11,5 +11,6 @@
         The source is written in <strong>pure css</strong> to be accessible for everybody and easy to contribute.
       </p>
     </div>
+    <Battlevs />
   </section>
 </template>

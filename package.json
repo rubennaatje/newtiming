@@ -54,6 +54,7 @@
     "svg-path-properties": "^1.0.4",
     "terminal.css": "^0.7.1",
     "typeface-inter": "^3.12.0",
+    "vue-flag-icon": "^1.0.6",
     "vue-socket.io": "^3.0.9",
     "webpack": "4.43.0",
     "webpack-node-externals": "1.7.2"
