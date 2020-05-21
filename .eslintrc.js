@@ -5,7 +5,8 @@ module.exports = {
     node: true
   },
   globals: {
-    __resources: true
+    __resources: true,
+    "PIXI": "readable",
   },
   parserOptions: {
     sourceType: 'module',

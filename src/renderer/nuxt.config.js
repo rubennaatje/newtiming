@@ -12,6 +12,8 @@ module.exports = {
   loading: false,
   plugins: [
     { ssr: true, src: '@/plugins/icons.js' },
+    { ssr: false, src: '@/plugins/socket.io.js' },
+    { src: '~/plugins/pixijs', mode: 'client', ssr: false },
   ],
   buildModules: [
     '@nuxtjs/tailwindcss',
@@ -19,7 +21,7 @@ module.exports = {
     '@nuxt/components',
   ],
   modules: [
-
+    'nuxt-spreadsheet',
   ],
   css: [
     'terminal.css',

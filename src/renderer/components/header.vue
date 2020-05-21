@@ -50,7 +50,7 @@ export default {
           ],
         },
         {
-          to: '/tv',
+          to: '/tv/trackmap',
           title: 'TV',
           subLinks: [
             {
@@ -87,10 +87,6 @@ export default {
           to: '/timing',
           title: 'Timing',
           subLinks: [
-            {
-              to: '/',
-              title: 'Dashboard',
-            },
           ],
         },
         {
@@ -106,7 +102,7 @@ export default {
               title: 'Stint editor',
             },
             {
-              to: '/sheet',
+              to: '/strategy/spreadsheet',
               title: 'Spreadsheets',
             },
           ],

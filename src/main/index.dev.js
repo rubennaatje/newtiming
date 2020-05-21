@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import { Menu, MenuItem, app } from 'electron';
 import electronDebug from 'electron-debug';
-import vueDevtools from 'vue-devtools';
 import { ELECTRON_RELAUNCH_CODE } from '../../.electron-nuxt/config';
 import mainWinHandler from './mainWindow';
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = 'true';
@@ -25,7 +24,7 @@ if (process.platform === 'win32') {
 }
 
 app.on('ready', () => {
-  vueDevtools.install();
+  // vueDevtools.install();
   const menu = Menu.getApplicationMenu();
   const refreshButton = new MenuItem({
     label: 'Relaunch electron',
