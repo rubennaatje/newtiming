@@ -5,6 +5,7 @@ export const state = () => ({
     username: '',
     entryNumber: 0,
   },
+  chat: [],
 });
 
 export const actions = {
@@ -17,6 +18,9 @@ export const actions = {
     context.commit('UPDATEUSER', sendData);
     this._vm.$socket.emit('entry', sendData);
   },
+  SOCKET_updateChat (context, data) {
+    context.commit('UPDATECHAT', data);
+  },
 };
 
 export const mutations = {
@@ -24,10 +28,17 @@ export const mutations = {
     state.user.username = data.username;
     state.user.entryNumber = data.entryNumber;
   },
+  UPDATECHAT (state, data) {
+    console.log(data);
+    state.chat.push(data);
+  },
 };
 
 export const getters = {
   getUser (state) {
     return state.user;
+  },
+  getChat (state) {
+    return state.chat;
   },
 };

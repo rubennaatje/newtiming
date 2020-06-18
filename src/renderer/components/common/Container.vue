@@ -1,15 +1,15 @@
 <template>
   <section class="fieldset">
     <h1 class="fieldset-title">{{ title }}</h1>
-    <slot />
+    <slot class="overflow-scroll h-full" />
   </section>
 </template>
 
 <script>
 export default {
-  name: 'Container',
+  name: "Container",
   // eslint-disable-next-line vue/require-prop-types
-  props: ['title'],
+  props: ["title"]
 };
 </script>
 

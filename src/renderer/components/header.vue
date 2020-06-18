@@ -10,8 +10,17 @@
       <span class="session-timer">23:59:20</span>
     </div>
     <nav class="terminal-menu w-1/3">
-      <ul vocab="https://schema.org/" typeof="BreadcrumbList" class="normal-menu">
-        <li v-for="item in menu" :key="item.title" property="itemListElement" typeof="ListItem">
+      <ul
+        vocab="https://schema.org/"
+        typeof="BreadcrumbList"
+        class="normal-menu"
+      >
+        <li
+          v-for="item in menu"
+          :key="item.title"
+          property="itemListElement"
+          typeof="ListItem"
+        >
           <nuxt-link :to="item.to">
             <span property="name">{{ item.title }}</span>
           </nuxt-link>
@@ -21,7 +30,12 @@
         </li>
       </ul>
       <ul vocab="https://schema.org/" typeof="BreadcrumbList" class="submenu">
-        <li v-for="submenu in sublinks" :key="submenu.title" property="itemListElement" typeof="list">
+        <li
+          v-for="submenu in sublinks"
+          :key="submenu.title"
+          property="itemListElement"
+          typeof="list"
+        >
           <nuxt-link :to="submenu.to">
             <span property="name">{{ submenu.title }}</span>
           </nuxt-link>
@@ -47,6 +61,10 @@ export default {
               to: '/tailwindtest',
               title: 'Tailwind test',
             },
+            {
+              to: '/dashboard/essentials',
+              title: 'Essentials',
+            },
           ],
         },
         {
@@ -65,7 +83,7 @@ export default {
           subLinks: [
             {
               to: '/',
-              title: 'Dashboard',
+              title: 'Chat',
             },
           ],
         },
@@ -82,8 +100,7 @@ export default {
         {
           to: '/timing',
           title: 'Timing',
-          subLinks: [
-          ],
+          subLinks: [],
         },
         {
           to: '/strategy',
@@ -139,7 +156,9 @@ export default {
   computed: {
     sublinks () {
       if (this.$nuxt._route.matched[0]) {
-        const res = this.menu.filter(row => this.$nuxt._route.matched[0].path.includes(row.to))[0];
+        const res = this.menu.filter(row =>
+          this.$nuxt._route.matched[0].path.includes(row.to)
+        )[0];
         if (res) {
           return res.subLinks;
         }
@@ -158,11 +177,11 @@ export default {
   margin: 0;
 }
 .normal-menu {
-    margin-top: calc(var(--global-space) * 1);
-    margin-bottom: 0;
+  margin-top: calc(var(--global-space) * 1);
+  margin-bottom: 0;
 }
 .terminal-menu li a.active {
-    color: #151515;
-    color: var(--font-color);
+  color: #151515;
+  color: var(--font-color);
 }
 </style>

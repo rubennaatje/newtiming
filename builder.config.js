@@ -3,7 +3,7 @@ const ICONS_DIR = 'build/icons/';
 const windowsOS = {
   win: {
     icon: ICONS_DIR + 'win-icon.ico',
-    publisherName: 'michal',
+    publisherName: 'Ruben',
     target: 'nsis',
   },
 
@@ -43,7 +43,7 @@ const macOS = {
 
 module.exports = {
   asar: false,
-  productName: 'My browser',
+  productName: 'SportscarGame',
   appId: 'org.michalzarach.my-browser',
   artifactName: 'my-browser-${version}.${ext}',
   directories: {

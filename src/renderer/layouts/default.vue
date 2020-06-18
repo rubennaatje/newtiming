@@ -40,4 +40,48 @@ body {
   --input-style: solid;
   --display-h1-decoration: none;
 }
+
+.red-text {
+  color: #ff0000;
+}
+
+.yellow-text {
+  color: #ffff00;
+}
+
+.blue-text {
+  color: #0000ff;
+}
+
+.green-text {
+  color: #00ff00;
+}
+
+.orange-text {
+  color: #ff9900;
+}
+
+.purple-text {
+  color: #ff00ff;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1f1f1f;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 </style>
