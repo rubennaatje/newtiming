@@ -7,9 +7,9 @@
 
 <script>
 export default {
-  name: "Container",
+  name: 'Container',
   // eslint-disable-next-line vue/require-prop-types
-  props: ["title"]
+  props: ['title'],
 };
 </script>
 

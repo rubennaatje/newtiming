@@ -1,19 +1,19 @@
 <template>
   <section class="h-full">
-    <div class="grid  grid-cols-6 grid-rows-2 gap-2 h-full">
-      <SContainer title="Driver" class="col-span-2 h-1/2">
-        <DonutChart />
+    <div class="grid  grid-cols-6 grid-rows-2 gap-2 h-full flex">
+      <SContainer title="Driver" class="col-span-2 h-full flex-grow-0">
+        <DonutChart class="overflow-y-auto h-full flex-grow-0" />
       </SContainer>
 
       <SContainer class="h-1/2" title="Essentials">
-        <CloseCars />
+        <CloseCars class="overflow-y-auto" />
       </SContainer>
 
-      <SContainer class="h-1/3" title="STINT">
-        <Stint />
+      <SContainer class="h-1/3 " title="STINT">
+        <Stint class="overflow-y-auto" />
       </SContainer>
 
-      <SContainer class="h-1/3" title="stint">
+      <SContainer class="h-1/3 " title="stint">
         test
       </SContainer>
 

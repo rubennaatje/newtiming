@@ -11,38 +11,38 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex';
 export default {
-  data() {
+  data () {
     return {
       series: [44, 55, 13],
       chartOptions: {
         chart: {
-          width: "100%",
-          type: "donut"
+          width: '100%',
+          type: 'donut',
         },
         dataLabels: {
-          enabled: false
+          enabled: false,
         },
         stroke: {
-          width: 0
+          width: 0,
         },
-        labels: ["Nakajima", "Buemi", "Hartley"],
+        labels: ['Nakajima', 'Buemi', 'Hartley'],
         responsive: [
           {
             breakpoint: 480,
             options: {
               chart: {
-                width: 200
+                width: 200,
               },
               legend: {
-                position: "bottom"
-              }
-            }
-          }
-        ]
-      }
+                position: 'bottom',
+              },
+            },
+          },
+        ],
+      },
     };
-  }
+  },
 };
 </script>

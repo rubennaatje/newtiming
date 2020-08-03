@@ -7,7 +7,7 @@ import { Viewport } from "pixi-viewport";
 import tweenManager from "pixi-tween";
 import { mapGetters } from "vuex";
 import { TrackOOP } from "./trackoop";
-
+import { CarOOP } from "./caroop";
 export default {
   computed: {
     ...mapGetters({
@@ -23,10 +23,10 @@ export default {
     }
   },
   sockets: {
-    connect: function() {
+    connect() {
       console.log("socket connected");
     },
-    updateChat: function(data) {
+    updateChat(data) {
       console.log(
         'this method was fired by the socket server. eg: io.emit("customEmit", data)'
       );
@@ -115,46 +115,12 @@ export default {
       });
     },
     AddCar(index) {
-      console.log(index);
-      const car = new PIXI.Graphics();
+      const car = new CarOOP(
+        this.allCars[index].category,
+        "",
+        this.allCars[index].carnumber
+      );
 
-      car.beginFill(0xffffff, 1);
-      car.drawCircle(0, 0, 5);
-      switch (this.allCars[index].category) {
-        case "LMGTEAm":
-          car.tint = 0xffa500;
-          break;
-        case "LMGTEPro":
-          car.tint = 0x00ff00;
-          break;
-        case "LMP2":
-          car.tint = 0x0000ff;
-          break;
-
-        case "LMP1":
-          car.tint = 0xff0000;
-          break;
-      }
-
-      console.log(this.allCars[index]);
-      const text = new PIXI.Text(this.allCars[index].carnumber, {
-        fontFamily: "Helvetica",
-        fontWeight: "bold",
-        fontSize: 8,
-        fill: 0xffffff,
-        align: "center"
-      });
-      text.position.x = -5;
-      if (this.allCars[index].carnumber.length === 1) {
-        text.position.x = -3;
-      }
-      text.position.y = -5;
-      text.resolution = 8;
-
-      //   ghost.tint = 0xff0000;
-
-      car.addChild(text);
-      car.zIndex = 5;
       // init tween
       const tween = PIXI.tweenManager.createTween(car);
       tween.time = 503;
@@ -172,7 +138,15 @@ export default {
           y: point.y
         });
       });
-
+      if (this.allCars[index].carnumber === 1) {
+        car.addAnnotation("Jenson Button");
+      }
+      if (this.allCars[index].carnumber === 8) {
+        car.addAnnotation("Fernando Alonso");
+      }
+      if (this.allCars[index].carnumber === 29) {
+        car.addAnnotation("Fastest lap", 0x9400d3, 20, 20);
+      }
       this.viewport.addChild(car);
     }
   }
