@@ -64,7 +64,7 @@ export class CarOOP extends PIXI.Container {
 
     this.annotation.drawRect(x + 10, y, text.length * 5 + 20, 10); // drawRect(x, y, width, height)
     this.annotation.endFill();
-    
+
     // draw white number box
     this.annotation.beginFill(0xffffff);
     this.annotation.moveTo(x + 5, y);

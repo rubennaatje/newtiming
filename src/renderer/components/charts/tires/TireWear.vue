@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+
 export default {
-  props: ['tire'],
+  props: { tire: { type: String, default: '' } },
   data () {
     return {
       series: [70],

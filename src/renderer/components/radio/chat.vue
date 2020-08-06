@@ -1,24 +1,24 @@
 <template>
   <div class="h-full">
     <div
-      v-for="message in chat"
-      :key="chat.message"
+      v-for="(chatMessage, index) in chat"
+      :key="index"
       class="grid grid-cols-3 gap-3 chat-message"
     >
       <div>
         <span class="chattime">{{
-          new Date(message.time).toISOString().substr(11, 8)
+          new Date(chatMessage.time).toISOString().substr(11, 8)
         }}</span>
-        <span :class="message.chatSender.class + '-chat'">#{{ message.chatSender.entryNumber }}
+        <span :class="chatMessage.chatSender.class + '-chat'">#{{ chatMessage.chatSender.entryNumber }}
           <span v-if="showTeamName"> Toyota Gazoo Racing |</span></span>
         <span
           class="username"
-          :style="'color: ' + hashCode(message.chatSender.user) + ';'"
+          :style="'color: ' + hashCode(chatMessage.chatSender.user) + ';'"
         >
-          {{ message.chatSender.user }}</span>
+          {{ chatMessage.chatSender.user }}</span>
       </div>
       <div class="col-span-2">
-        {{ message.text }}
+        {{ chatMessage.text }}
       </div>
     </div>
     <div class="grid grid-cols-10 gap-2 sticky bottom-0">
@@ -48,6 +48,9 @@ export default {
       message: '',
     };
   },
+  computed: {
+    ...mapGetters({ chat: 'user/getChat' }),
+  },
   methods: {
     sendMessage () {
       this.$socket.emit('sendMessage', {
@@ -58,19 +61,16 @@ export default {
     },
     hashCode (str) {
       let hash = 0;
-      for (var i = 0; i < str.length; i++) {
+      for (let i = 0; i < str.length; i++) {
         hash = str.charCodeAt(i) + ((hash << 5) - hash);
       }
       let colour = '#';
-      for (var i = 0; i < 3; i++) {
-        const value = (hash >> (i * 8)) & 0xFF;
+      for (let j = 0; j < 3; j++) {
+        const value = (hash >> (j * 8)) & 0xFF;
         colour += ('00' + value.toString(16)).substr(-2);
       }
       return colour;
     },
-  },
-  computed: {
-    ...mapGetters({ chat: 'user/getChat' }),
   },
 };
 </script>
