@@ -22,16 +22,6 @@ export default {
       }
     },
   },
-  sockets: {
-    connect () {
-      console.log('socket connected');
-    },
-    updateChat (data) {
-      console.log(
-        'this method was fired by the socket server. eg: io.emit("customEmit", data)'
-      );
-    },
-  },
   beforeDestroy () {
     this.app.destroy();
   },
@@ -58,8 +48,7 @@ export default {
         screenHeight: window.innerHeight,
         worldWidth: 1000,
         worldHeight: 1000,
-
-        // interaction: this.app.renderer.plugins.interaction // the interaction module is important for wheel to work properly when renderer.view is placed or scaled
+        interaction: this.app.renderer.plugins.interaction, // the interaction module is important for wheel to work properly when renderer.view is placed or scaled
       });
       this.app.stage.addChild(this.viewport);
     },
