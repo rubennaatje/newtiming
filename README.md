@@ -1,6 +1,6 @@
-# sportscar-game
+#  New timing
 
-> the frontend for the sportscar game
+> Simple timing page, go to releases to download
 
 #### Build Setup
 
