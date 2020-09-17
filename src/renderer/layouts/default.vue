@@ -7,8 +7,23 @@
 
 <script>
 import appHeader from '@/components/header';
+import { mapActions } from 'vuex';
 export default {
   components: { appHeader },
+  async fetch ({ store, params }) {
+    console.log('test');
+    await store.dispatch('lemans/getJson');
+  },
+  mounted () {
+    this['lemans/getJson']();
+    setInterval(async () => {
+      this['lemans/getJson']();
+    }, 15000);
+  },
+  methods: {
+    ...mapActions(['lemans/getJson']),
+  },
+
 };
 </script>
 

@@ -25,6 +25,7 @@
   "devDependencies": {
     "@mdi/font": "5.2.45",
     "@nuxt/components": "^0.2.3",
+    "@nuxtjs/date-fns": "^1.4.0",
     "@nuxtjs/eslint-config": "1.1.2",
     "@nuxtjs/tailwindcss": "^2.0.0",
     "@xpda-dev/core": "^0.1.5",
@@ -61,5 +62,8 @@
     "webpack": "4.43.0",
     "webpack-node-externals": "1.7.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vue-awesome-countdown": "^1.1.2",
+    "vue-devtools": "^5.1.4"
+  }
 }

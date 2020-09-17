@@ -43,9 +43,9 @@ const macOS = {
 
 module.exports = {
   asar: false,
-  productName: 'SportscarGame',
-  appId: 'org.michalzarach.my-browser',
-  artifactName: 'my-browser-${version}.${ext}',
+  productName: 'Timing',
+  appId: 'org.michalzarach.my-timing',
+  artifactName: 'timing-${version}.${ext}',
   directories: {
     output: 'build',
   },

@@ -2,12 +2,30 @@
   <div class="terminal-nav flex">
     <header class="terminal-logo w-1/3">
       <div class="logo">
-        <a href="#" class="no-style terminal-prompt">2019 6 Hours of Spa</a>
-        <span>Free practice 1</span>
+        <button type="button" @click="startCountdown">
+          <a href="#" class="no-style terminal-prompt">{{ params.eventName }}</a>
+          <span :class="params.racestate">{{ params.racestate }}</span>
+        </button>
       </div>
     </header>
     <div class="w-1/3 text-center">
-      <span class="session-timer">23:59:20</span>
+      <no-ssr>
+        <span v-if="params.remaining" class="session-timer">
+          <vac ref="vac" :end-time="new Date().getTime() + (params.remaining * 1000)">
+            <template
+              v-slot:process="{ timeObj }"
+            >
+              <span :class="params.racestate">{{ `${timeObj.h}:${timeObj.m}:${timeObj.s}` }}</span>
+            </template>
+            <template
+              v-slot:finish
+            >
+              <span :class="params.racestate">00:00:00</span>
+            </template>
+          </vac>
+        </span>
+      </no-ssr>
+      </button></span>
     </div>
     <nav class="terminal-menu w-1/3">
       <ul
@@ -49,106 +67,22 @@
 </template>
 
 <script>
+import {
+  mapGetters,
+} from 'vuex';
+
 export default {
   data () {
     return {
       menu: [
-        {
-          to: '/dashboard',
-          title: 'Dashboard',
-          subLinks: [
-            {
-              to: '/tailwindtest',
-              title: 'Tailwind test',
-            },
-            {
-              to: '/dashboard/essentials',
-              title: 'Essentials',
-            },
-          ],
-        },
-        {
-          to: '/tv/',
-          title: 'TV',
-          subLinks: [
-            {
-              to: '/tv/trackmap',
-              title: 'trackmap',
-            },
-          ],
-        },
-        {
-          to: '/radio',
-          title: 'Radio',
-          subLinks: [
-            {
-              to: '/',
-              title: 'Chat',
-            },
-          ],
-        },
-        {
-          to: '/data',
-          title: 'Data',
-          subLinks: [
-            {
-              to: '/',
-              title: 'Dashboard',
-            },
-          ],
-        },
         {
           to: '/timing',
           title: 'Timing',
           subLinks: [],
         },
         {
-          to: '/strategy',
-          title: 'Strategy',
-          subLinks: [
-            {
-              to: '/strategy',
-              title: 'Dashboard',
-            },
-            {
-              to: '/strategy',
-              title: 'Stint editor',
-            },
-            {
-              to: '/strategy/spreadsheet',
-              title: 'Spreadsheets',
-            },
-          ],
-        },
-        {
           to: '/info',
           title: 'Info',
-          subLinks: [
-            {
-              to: '/info/Welcome',
-              title: 'Welcome',
-            },
-            {
-              to: '/info/guide',
-              title: 'Rulebook',
-            },
-            {
-              to: '/info/guide',
-              title: 'Entrylist',
-            },
-            {
-              to: '/info/guide',
-              title: 'Spotterguide',
-            },
-            {
-              to: '/info/guide',
-              title: 'Players',
-            },
-            {
-              to: '/info/guide',
-              title: 'Guide',
-            },
-          ],
         },
       ],
     };
@@ -164,6 +98,16 @@ export default {
         }
       }
       return {};
+    },
+    ...mapGetters({
+      params: 'lemans/getParams',
+    }),
+  },
+  methods: {
+    startCountdown () {
+      const vm = this;
+
+      vm.$refs.vac.startCountdown();
     },
   },
 };
@@ -183,5 +127,26 @@ export default {
 .terminal-menu li a.active {
   color: #151515;
   color: var(--font-color);
+}
+
+.red {
+  background-color: red;
+  padding: 3px;
+}
+
+.green {
+  background-color: green;
+  padding: 3px;
+}
+.full_yellow {
+    background-color: yellow;
+  padding: 3px;
+  color:black
+}
+
+.chk {
+  background-color: white;
+  color: black;
+    padding: 3px;
 }
 </style>

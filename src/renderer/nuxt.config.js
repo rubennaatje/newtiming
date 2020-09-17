@@ -12,7 +12,8 @@ module.exports = {
   loading: false,
   plugins: [
     { ssr: true, src: '@/plugins/icons.js' },
-    { ssr: false, src: '@/plugins/socket.io.js' },
+    { ssr: false, src: '@/plugins/vac.js' },
+    // { ssr: false, src: '@/plugins/socket.io.js' },
     { ssr: false, src: '@/plugins/vueapexcharts.js' },
     { src: '@/plugins/vue-flags.js' },
     { src: '~/plugins/pixijs', mode: 'client', ssr: false },
@@ -21,6 +22,7 @@ module.exports = {
     '@nuxtjs/tailwindcss',
     // TODO: Remove when upgrading to nuxt 2.13+
     '@nuxt/components',
+    '@nuxtjs/date-fns',
   ],
   modules: [
     'nuxt-spreadsheet',

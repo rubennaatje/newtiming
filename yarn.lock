@@ -1095,6 +1095,13 @@
     webpack-node-externals "^1.7.2"
     webpackbar "^4.0.0"
 
+"@nuxtjs/date-fns@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/date-fns/-/date-fns-1.4.0.tgz#7cb0a03938e95bced9b089820c32982a9e0638c7"
+  integrity sha512-YuAKM9Y1Ig3u5ZPlW466taL4S7llE5oxgM4Vnth3pEqpRtnAF3jlxlQ3MYv5HcdOnhWBx2pgrbRTSQmCqKF/4w==
+  dependencies:
+    date-fns "^2.16.1"
+
 "@nuxtjs/eslint-config@1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@nuxtjs/eslint-config/-/eslint-config-1.1.2.tgz#cde4c950014a781bcc34abbfef9c62546d8fc34c"
@@ -3733,6 +3740,11 @@ data-urls@^1.1.0:
     abab "^2.0.0"
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
+
+date-fns@^2.16.1:
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
+  integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
 
 de-indent@^1.0.2:
   version "1.0.2"
@@ -10822,10 +10834,20 @@ vue-apexcharts@^1.5.3:
   resolved "https://registry.yarnpkg.com/vue-apexcharts/-/vue-apexcharts-1.5.3.tgz#9fde83727d944707da5c8c2fa9f09a051b48d082"
   integrity sha512-ImbvQxgwbLMrEc9/veDIJ7lzncf1fJDSNqqK0x2YDNUCq5tE9uqM4Gb/ZYUB5WlDM3vDpzwDEmsidWcaO6/WXQ==
 
+vue-awesome-countdown@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/vue-awesome-countdown/-/vue-awesome-countdown-1.1.2.tgz#7dbce0e2d7c064b3380378bf23ac81376fbb123e"
+  integrity sha512-+bOTC+65WvXFop6A+SKBVTtOiTimOO10WOVr4gCSSdcIMeNpoXnRZiJeCcuds+OGkhvw/AW7zXZ/5p1rnQTJfw==
+
 vue-client-only@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/vue-client-only/-/vue-client-only-2.0.0.tgz#ddad8d675ee02c761a14229f0e440e219de1da1c"
   integrity sha512-arhk1wtWAfLsJyxGMoEYhoBowM87/i6HLSG2LH/03Yog6i2d9JEN1peMP0Ceis+/n9DxdenGYZZTxbPPJyHciA==
+
+vue-devtools@^5.1.4:
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/vue-devtools/-/vue-devtools-5.1.4.tgz#265a7458ade2affb291739176964256b597fa302"
+  integrity sha512-EBAEXvAHUinsPzoSiElps0JgtLXUnJXKIJbP6nfdz/R63VdKBMfJ34/rFip+4iT7iMbVS5lA4W6N1jq4Hj4LCg==
 
 vue-eslint-parser@^5.0.0:
   version "5.0.0"

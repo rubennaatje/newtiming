@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { Menu, MenuItem, app } from 'electron';
 import electronDebug from 'electron-debug';
+import vueDevtools from 'vue-devtools';
 import { ELECTRON_RELAUNCH_CODE } from '../../.electron-nuxt/config';
 import mainWinHandler from './mainWindow';
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = 'true';
@@ -24,7 +25,7 @@ if (process.platform === 'win32') {
 }
 
 app.on('ready', () => {
-  // vueDevtools.install();
+  vueDevtools.install();
   const menu = Menu.getApplicationMenu();
   const refreshButton = new MenuItem({
     label: 'Relaunch electron',
@@ -34,6 +35,27 @@ app.on('ready', () => {
     },
   });
   menu.append(refreshButton);
+
+  const spotterGuideButton = new MenuItem({
+    label: 'Spotter guide',
+    accelerator: 'CommandOrControl+P',
+    click: async () => {
+      const { shell } = require('electron');
+      await shell.openExternal('https://spotterguides.com/portfolio/20_lm/');
+    },
+  });
+  menu.append(spotterGuideButton);
+
+  const scratchpad = new MenuItem({
+    label: 'Scratch pad',
+    accelerator: 'CommandOrControl+P',
+    click: async () => {
+      const { shell } = require('electron');
+      await shell.openExternal('https://docs.google.com/document/d/1h4eG_mt6ZwYchXCfkgsvKT672M72sTP9hbMQ41QwMYI/edit?usp=sharing');
+    },
+  });
+  menu.append(scratchpad);
+
   Menu.setApplicationMenu(menu);
 });
 
