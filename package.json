@@ -1,6 +1,6 @@
 {
   "name": "sportscar-game",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "the frontend for the timing",
   "main": "./dist/main/index.js",
   "scripts": {
